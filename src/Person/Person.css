@@ -1,0 +1,166 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------- */
+/* main card */
+/* ---------------------------------------- */
+.personCard {
+    position: relative;
+    margin: 20px 0px;
+    /* width: 30%; */
+    width: 100%;
+    box-shadow: 0px 3px 13px 1px rgba(0,0,0,0.12);
+}
+.personCard hr {
+    border-color: #888888;
+}
+
+/* ---------------------------------------- */
+/* card banner */
+/* ---------------------------------------- */
+
+.personBanner {
+    width: 100%;
+}
+
+.personBannerContainer {
+    position: relative;
+}
+
+.personBannerContainer div.developer {
+    background: rgba(192, 72, 72, 0.5);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, rgba(192, 72, 72, 0.5), rgba(72, 0, 72, 0.5));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, rgba(192, 72, 72, 0.5), rgba(72, 0, 72, 0.5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4px);
+}
+
+.personBannerContainer div.photographer {
+    background: rgba(255, 78, 80, 0.5);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(249, 212, 35, 0.5), rgba(255, 78, 80, 0.5));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(249, 212, 35, 0.5), rgba(255, 78, 80, 0.5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4px);
+}
+
+.personBannerContainer div.designer {
+    background: rgba(36, 198, 220, 0.5);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, rgba(81, 74, 157, 0.5), rgba(36, 198, 220, 0.5));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #514A9D, rgba(36, 198, 220, 0.5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4px);
+}
+
+/* ---------------------------------------- */
+/* card content */
+/* ---------------------------------------- */
+
+.personContent {
+    position: relative;
+    padding: 40px 15px 0px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.personContent h4 {
+    position: absolute;
+    top: -20px;
+    left: 130px;
+    font-size: 16px;
+}
+
+.personContent h4 a {
+    color: #888888;
+}
+
+.personContent h4 a:hover {
+    color: #10a0c0;
+}
+
+.personContent small:nth-of-type(1) {
+    position: absolute;
+    top: -20px;
+    left: 115px;
+    text-transform: capitalize;
+    color: #ececec;
+}
+
+.personContent small:nth-of-type(2) {
+    position: absolute;
+    top: 23px;
+    left: 130px;
+    color: #cacaca;
+}
+
+.personContent img {
+    width: 85px;
+    padding: 2px;
+    border-radius: 45px;
+    position: absolute;
+    top: -50px;
+    left: 20px;
+}
+
+.personContent img.developer {
+    background: #C04848;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #C04848, #480048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #C04848, #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.personContent img.photographer {
+    background: #FF4E50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+.personContent img.designer {
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* ---------------------------------------- */
+/* card bottom content */
+/* ---------------------------------------- */
+.personBottomContent {
+    border: solid #bbbbbb;
+    border-width: 1px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+.personBottomContent div div {
+    text-align: left;
+    font-size: 10px;
+    padding-bottom: 5px;
+}
+
+/* ---------------------------------------- */
+/* card media query */
+/* ---------------------------------------- */
+
+@media (max-width: 900px) { 
+    .personCard {
+        width: 90%;
+    }   
+}

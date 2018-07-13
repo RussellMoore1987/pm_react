@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.App {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: #999999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ color: #888888;
+}
+
+a {
+  text-decoration: none;
+  color: #47c9e5; 
+}
+
+a:hover {
+  color: #10a0c0; 
+}
+
+/* .personContainer {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+} */
+
+.personContainer {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+}
