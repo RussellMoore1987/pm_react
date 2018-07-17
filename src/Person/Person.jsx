@@ -8,11 +8,14 @@ const person = (props) => {
     let personPic = require("../images/abd_profile_pic.jpg");
     let personPicClass = "developer";
     let bannerPic = require("../images/developer_person_profile_banner.jpg");
+    let description = "No description available...";
     let personIcon = "code";
     // trim child text
-    let description = props.children.slice(0, 150) + "...";
+    if (props.data.description.length > 0) {
+        description = props.data.description.slice(0, 150) + "...";
+    }
     // Check for alternate use
-    switch (props.type) {
+    switch (props.data.data.type) {
         case "photographer": 
             bannerPic = require("../images/photographer_person_profile_banner.jpg");
             personPic = require("../images/shay_profile_pic.jpg");
@@ -26,18 +29,19 @@ const person = (props) => {
             personIcon = "swatchbook";
             break;
     }
+    console.log(props.data.data.name);
     // Return component
     return (
         <div className="personCard">
             <div className="personBannerContainer">
-                <img className="personBanner" src={bannerPic} alt={props.type}/>
+                <img className="personBanner" src={bannerPic} alt={props.data.data.type}/>
                 <div className={personPicClass}></div>
             </div>
             <div className="personContent">
-                <img className={personPicClass} src={personPic} alt={props.name}/>
-                <small><i class={"fas fa-" + personIcon}></i> {personPicClass}</small>
-                <h4><a href="#">{props.name}</a></h4>
-                <small><i class="fas fa-map-marker-alt"></i> {props.address}</small>
+                <img className={personPicClass} src={personPic} alt={props.data.data.name}/>
+                <small><i className={"fas fa-" + personIcon}></i> {personPicClass}</small>
+                <h4><a href="#">{props.data.data.name}</a></h4>
+                <small><i className="fas fa-map-marker-alt"></i> {props.data.data.address}</small>
                 <p>{description}</p>
                 <p>
                     <a href="#">view profile</a>
@@ -48,19 +52,31 @@ const person = (props) => {
                     <div>
                         <small>Projects</small>
                     </div>
-                    <span><i class="fas fa-project-diagram"></i> {props.about.projects}</span>
+                    <span>
+                        <a href="#">
+                            <i className="fas fa-project-diagram"></i> {props.data.data.about.projects}
+                        </a>
+                    </span>
                 </div>
                 <div>
                     <div>
-                        <small>Reviews ({props.about.reviews.reviews})</small>
+                        <small>Reviews ({props.data.data.about.reviews.reviews})</small>
                     </div>
-                    <span><i class="fas fa-star"></i> {props.about.reviews.stars}</span>
+                    <span>
+                        <a href="#">
+                            <i className="fas fa-star"></i> {props.data.data.about.reviews.stars}
+                        </a>
+                    </span>
                 </div> 
                 <div>
                     <div>
                         <small>Posts</small>
                     </div>
-                    <span><i class="far fa-address-card"></i> {props.about.posts}</span>
+                    <span>
+                        <a href="#">
+                            <i className="far fa-address-card"></i> {props.data.data.about.posts}
+                        </a>
+                    </span>
                 </div>      
             </div>
         </div>

@@ -75,7 +75,7 @@
 
 .personContent {
     position: relative;
-    padding: 40px 15px 0px 15px;
+    padding: 40px 15px 55px 15px;
     text-align: left;
     font-size: 14px;
 }
@@ -99,6 +99,7 @@
     position: absolute;
     top: -20px;
     left: 115px;
+    padding-right: 10px;
     text-transform: capitalize;
     color: #ececec;
 }
@@ -107,6 +108,7 @@
     position: absolute;
     top: 23px;
     left: 130px;
+    padding-right: 10px;
     color: #cacaca;
 }
 
@@ -141,6 +143,9 @@
 /* card bottom content */
 /* ---------------------------------------- */
 .personBottomContent {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     border: solid #bbbbbb;
     border-width: 1px 0px 0px 0px;
     display: flex;
@@ -155,12 +160,10 @@
     padding-bottom: 5px;
 }
 
-/* ---------------------------------------- */
-/* card media query */
-/* ---------------------------------------- */
+.personBottomContent a {
+    color: #999999;
+}
 
-@media (max-width: 900px) { 
-    .personCard {
-        width: 90%;
-    }   
+.personBottomContent a:hover {
+    color: #10a0c0;
 }

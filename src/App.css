@@ -1,16 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ---------------------------------------- */
+/* main app css */
+/* ---------------------------------------- */
 
 .App {
   text-align: center;
@@ -31,17 +21,31 @@ a:hover {
   color: #10a0c0; 
 }
 
-/* .personContainer {
+.container {
   max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-} */
+  margin: auto
+}
 
 .personContainer {
   margin: 20px;
   display: grid;
   grid-template-columns: repeat(3, 30%);
+  justify-content: center;
+  grid-gap: 1.5rem
+}
+
+/* ---------------------------------------- */
+/* card media query */
+/* ---------------------------------------- */
+
+@media (max-width: 960px) { 
+  .personContainer {
+    grid-template-columns: repeat(2, 45%);
+  }   
+}
+
+@media (max-width: 760px) { 
+  .personContainer {
+    grid-template-columns: 100%;
+  }   
 }
