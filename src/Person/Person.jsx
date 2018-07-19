@@ -8,11 +8,16 @@ const person = (props) => {
     let personPic = require("../images/abd_profile_pic.jpg");
     let personPicClass = "developer";
     let bannerPic = require("../images/developer_person_profile_banner.jpg");
-    let description = "No description available...";
     let personIcon = "code";
-    // trim child text
+    let description = "No description available...";
+    // trim description text
     if (props.data.description.length > 0) {
         description = props.data.description.slice(0, 150) + "...";
+    }
+    let name = props.data.data.name;
+    // trim name
+    if (props.data.data.name.length > 16) {
+        name = props.data.data.name.slice(0, 16) + "...";
     }
     // Check for alternate use
     switch (props.data.data.type) {
@@ -29,7 +34,6 @@ const person = (props) => {
             personIcon = "swatchbook";
             break;
     }
-    console.log(props.data.data.name);
     // Return component
     return (
         <div className="personCard">
@@ -40,12 +44,20 @@ const person = (props) => {
             <div className="personContent">
                 <img className={personPicClass} src={personPic} alt={props.data.data.name}/>
                 <small><i className={"fas fa-" + personIcon}></i> {personPicClass}</small>
-                <h4><a href="#">{props.data.data.name}</a></h4>
+                <h4><a href="#">{name}</a></h4>
                 <small><i className="fas fa-map-marker-alt"></i> {props.data.data.address}</small>
                 <p>{description}</p>
                 <p>
                     <a href="#">view profile</a>
                 </p>
+                <div>
+                    <span onClick={props.edit}><i className="fas fa-edit"></i></span>
+                    <div>
+                        <input type="text" value={props.data.data.name} onChange={props.changed}/>
+                        <button onClick={props.click}>delete user</button>
+                    </div>
+                </div>
+                
             </div>
             <div className="personBottomContent">
                 <div>

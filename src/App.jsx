@@ -17,6 +17,7 @@ class App extends Component {
     persons: [
       {
         data: {
+          id: 1,
           name:"Abd al Matin", 
           type:"developer", 
           address:"New York - New York, USA",
@@ -30,6 +31,7 @@ class App extends Component {
       },
       {
         data: {
+          id: 2,
           name:"Shay Martin", 
           type:"photographer", 
           address:"Rexburg - Idaho, USA",
@@ -43,6 +45,7 @@ class App extends Component {
       },
       {
         data: {
+          id: 3,
           name:"Stephanie Warhol", 
           type:"designer", 
           address:"Salt Lake City - Utah, USA",
@@ -56,6 +59,7 @@ class App extends Component {
       },
       {
         data: {
+          id: 4,
           name:"Stephanie Warhol", 
           type:"designer", 
           address:"Salt Lake City - Utah, USA",
@@ -69,6 +73,7 @@ class App extends Component {
       },
       {
         data: {
+          id: 5,
           name:"Stephanie Warhol", 
           type:"designer", 
           address:"Salt Lake City - Utah, USA",
@@ -84,8 +89,44 @@ class App extends Component {
   }
 
   switchNameHandler = () => {
-    // console.log("was clicked");
-    // this.setState{}.persons[0].data.name = "Sam Gogo";
+    console.log("switchNameHandler was clicked");
+    // this.setState({persons:});
+  }
+
+  nameChangedHandler = (event, id) => {
+    // console.log("I was changed to " + event.target.value);
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.data.id === id;
+    });
+    // make a copy of the data
+    // const person = Object.assign({}, this.state.persons[personIndex]);
+    //or 
+    const person = {
+      ...this.state.persons[personIndex]
+    };
+    // change the data with new values
+    person.data.name = event.target.value;
+    // make a copy of the data
+    const persons = [...this.state.persons];
+    // update the copy of the array
+    persons[personIndex] = person;
+    this.setState({persons: persons});
+  }
+
+  deletePersonHandler = (personIndex) => {
+    // make a new copy of the state array
+    // const persons = this.state.persons.slice();
+    // or
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons});
+  }
+
+  // show hide edit container
+  editPersonHandler = (event) => {
+    console.log(event);
+    console.log(event.target.parentElement);
+    console.log(event.Handler);
   }
 
   render() {
@@ -96,11 +137,10 @@ class App extends Component {
         <button onClick={this.switchNameHandler}>Switch Name</button>
           <div className="container">
             <div className="personContainer" >
-              <Person data={this.state.persons[0]} />
-              <Person data={this.state.persons[1]} />
-              <Person data={this.state.persons[2]} />
-              <Person data={this.state.persons[3]} />
-              <Person data={this.state.persons[4]} />
+              {/* loop over array of data*/}
+              {this.state.persons.map((person, index) => {
+                return <Person data={person} key={person.data.id} click={this.deletePersonHandler.bind(this, index)} changed={(event) => this.nameChangedHandler(event, person.data.id)} edit={(event) => this.editPersonHandler(event)}/>
+              })}
             </div>
           </div>
       </div>
